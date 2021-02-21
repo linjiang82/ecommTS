@@ -1,10 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { hot } from "react-hot-loader";
+import App from "./App";
 
-const HelloWorld: React.FunctionComponent = () => {
-  return <div>Hello wrorld</div>;
-};
-const App = hot(module)(HelloWorld);
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.hydrate(<App />, document.getElementById("root"));

@@ -1,15 +1,15 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "typeRoots": ["./node_modules/@types"],
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "CommonJS",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "es5",
     "jsx": "react",
-    "lib": ["es6"],
+    "lib": ["es6", "dom"],
     "esModuleInterop": true,
     "allowJs": true
   },
-  "exclude": ["client/**/*", "node_modules"]
+  "exclude": ["node_modules"]
 }

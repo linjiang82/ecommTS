@@ -6,7 +6,7 @@ const CURRENT_WORKING_DIR = process.cwd();
 
 const config = {
   name: "server",
-  entry: [path.join(CURRENT_WORKING_DIR, "./server/server.ts")],
+  entry: [path.join(CURRENT_WORKING_DIR, "./server/server.tsx")],
   target: "node",
   output: {
     path: path.join(CURRENT_WORKING_DIR, "/dist/"),
@@ -21,6 +21,10 @@ const config = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: ["babel-loader"],
+      },
+      {
+        test: /\.jpg?$/,
+        use: ["file-loader"],
       },
     ],
   },
