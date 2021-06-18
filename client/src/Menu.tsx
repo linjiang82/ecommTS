@@ -12,15 +12,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Menu: React.FunctionComponent = () => {
+const Menu: React.FC = () => {
   const classes = useStyles();
 
   return (
     <AppBar className={classes.appbar}>
       <Toolbar>
         <Typography>Ecomm</Typography>
-        <NavLink to='/'>User</NavLink>
-        <NavLink to='/signin'>Signin</NavLink>
+        <NavLink to="/">User</NavLink>
+        <NavLink to="/signin">Signin</NavLink>
+        <NavLink to="/signup">Signup</NavLink>
       </Toolbar>
     </AppBar>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { classicNameResolver } from "typescript";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -8,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Signin: React.FunctionComponent = () => {
+const Signin: React.FC = () => {
   const classes = useStyles();
   return <div className={classes.root}>signin</div>;
 };

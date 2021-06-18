@@ -8,15 +8,19 @@ import theme from "../client/src/theme";
 import template from "../template";
 import devBundle from "./devBundle";
 import { ThemeProvider, ServerStyleSheets } from "@material-ui/core/styles";
+import bodyParser from "body-parser";
+import authRouter from "./routers/authRouter";
 
 import express from "express";
 const CURRENT_WORKING_DIR = process.cwd();
 
 const app = express();
 devBundle.compile(app);
+app.use(bodyParser());
 const port = 3000;
 
 app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
+app.use("/api", authRouter);
 app.get("*", (req, res) => {
   //SSR
   const sheets = new ServerStyleSheets();
