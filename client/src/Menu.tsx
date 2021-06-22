@@ -20,6 +20,7 @@ const Menu: React.FC = () => {
       <Toolbar>
         <Typography>Ecomm</Typography>
         <NavLink to="/">User</NavLink>
+        <NavLink to="/device">Device</NavLink>
         <NavLink to="/signin">Signin</NavLink>
         <NavLink to="/signup">Signup</NavLink>
       </Toolbar>

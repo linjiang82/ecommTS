@@ -10,17 +10,19 @@ import devBundle from "./devBundle";
 import { ThemeProvider, ServerStyleSheets } from "@material-ui/core/styles";
 import bodyParser from "body-parser";
 import authRouter from "./routers/authRouter";
-
+import vvRouter from "./routers/vvRouter";
 import express from "express";
+
 const CURRENT_WORKING_DIR = process.cwd();
 
 const app = express();
 devBundle.compile(app);
-app.use(bodyParser());
+app.use(bodyParser.json());
 const port = 3000;
 
 app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "dist")));
 app.use("/api", authRouter);
+app.use("/api", vvRouter);
 app.get("*", (req, res) => {
   //SSR
   const sheets = new ServerStyleSheets();
